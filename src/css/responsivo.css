@@ -1,0 +1,23 @@
+@media (max-width: 470px) { 
+    .gerador-conselhos{
+        width: 290px;
+        height: 260px;
+        padding: 30px;
+    }
+
+    .icone{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-top: -20px;
+    }
+    
+    .icone img{
+        width: 30%;
+    }
+
+    p{
+        font-weight: 800;
+        font-size: 20px;
+    }
+}
