@@ -33,10 +33,17 @@ picture img{
     justify-content: center;
     border-radius: 50%;
     margin-top: -25px;
+    border: none;
+    transition: 0.3s ease-in-out;
 }
 
 .icone img{
     width: 40%;
+}
+
+.icone:hover{
+    cursor: pointer;
+    background-color: rgb(98, 237, 98);
 }
 
 h6{

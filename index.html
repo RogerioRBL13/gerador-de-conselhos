@@ -18,9 +18,9 @@
 <body>
     <main class="container">
         <section class="gerador-conselhos">
-            <h6>ADVICE #117</h6>
+            <h6 id="conselho">ADVICE #117</h6>
 
-            <p>"It is easy to sit up and take notice, what's difficult is getting up and taking action."</p>
+            <p id="novo-conselho">"It is easy to sit up and take notice, what's difficult is getting up and taking action."</p>
 
             <picture>
                 <source srcset="src/images/pattern-divider-mobile.svg" media="(max-width: 570px)">
@@ -28,9 +28,11 @@
             </picture>
         </section>
 
-        <div class="icone">
-            <img src="src/images/icon-dice.svg" alt="">
-        </div>
+        <button class="icone" id="btn-gerar-conselho">
+            <img src="src/images/icon-dice.svg" alt="Ícone do gerador de conselhos">
+        </button>
     </main>
+
+    <script src="./src/javascript/index.js"></script>
 </body>
 </html>
