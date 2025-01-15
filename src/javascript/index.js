@@ -20,7 +20,7 @@ async function idAleatorioConselho() {
         const url = "https://api.adviceslip.com/advice";
         const resposta = await fetch(url)
         let idDoConselho = await resposta.json()
-        conselhoDaVez.innerText = `Advice ${idDoConselho.slip.id}` 
+        conselhoDaVez.innerText = `Advice #${idDoConselho.slip.id}` 
     }catch(Error){
         conselhoDaVez.innerText = `Advice Error` 
     } 
