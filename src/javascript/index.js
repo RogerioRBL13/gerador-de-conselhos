@@ -1,6 +1,6 @@
 const btnGerarNovoConselho = document.getElementById('btn-gerar-conselho')
 const novoConselho = document.getElementById('novo-conselho')
-const conselhoDaVez = document.getElementById('conselho')
+const advice = document.getElementById('conselho')
 
 
 async function gerarNovoConselho(){
@@ -8,27 +8,17 @@ async function gerarNovoConselho(){
         const url = "https://api.adviceslip.com/advice";
         const resposta = await fetch(url)
         let mensagemConselho = await resposta.json()
+
+        advice.innerText = `Advice #${mensagemConselho.slip.id}`
         novoConselho.innerText = mensagemConselho.slip.advice
+
     }catch(Error){
+        advice.innerText = `Advice Error!` 
         novoConselho.innerText = `Erro ao gerar novo conselho :(`
     }
 }
 
-async function idAleatorioConselho() {
-    try{
-        await gerarNovoConselho()
-        const url = "https://api.adviceslip.com/advice";
-        const resposta = await fetch(url)
-        let idDoConselho = await resposta.json()
-        conselhoDaVez.innerText = `Advice #${idDoConselho.slip.id}` 
-    }catch(Error){
-        conselhoDaVez.innerText = `Advice Error` 
-    } 
-}
+btnGerarNovoConselho.addEventListener('click', gerarNovoConselho);
 
-idAleatorioConselho()
-
-btnGerarNovoConselho.addEventListener('click', ()=>{
-    gerarNovoConselho()
-    idAleatorioConselho()
-})
+gerarNovoConselho();
+   
