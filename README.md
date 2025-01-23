@@ -8,26 +8,25 @@ Em seguida adicionei um id chamado "btn-gerar-conselho" para ser buscado no meu 
     </button>
 ```
 
-2- Em seguida busquei o Endpoint do API do Gerador de Conselhos com o fetch na função 'gerarNovoConselho()'.
+2- Em seguida busquei o Endpoint do API do Gerador de Conselhos com o fetch na função 'gerarNovoConselho()' para que trabalhemos na alteração dos textos HTML "ADVICE" e dos novos "CONSELHOS".
 ```js
 async function gerarNovoConselho()
 ```
 
-Daí chamando meu texto da tag <p> com o id "novoConselho", alterei o texto com o conselho atual buscando isso
-navegando dentro do json através do console.log: 'mensagemConselho.slip.advice'.
+3- Daí chamando meu texto da tag <h6> com o id "conselho", alterei o texto com o o número do id buscando isso
+navegando dentro do json através do console.log: 'mensagemConselho.slip.id'.
 
-3- Depois fiz o mesmo para alterar o id do título "Advice" na função 'idAleatorioConselho()' também navegando dentro do console.log: 'idDoConselho.slip.id'.
-```js
-async function idAleatorioConselho()
-```
+Depois fiz o mesmo para alterar o texto na tag <p> onde se atualiza o conselho chamando pelo id "novoConselho", também navegando dentro do console.log: 'idDoConselho.slip.advice'.
 
-4- Coloquei ambas as funções dentro do try e do catch para fazer os tratamentos de erros.
+Tudo isso deu para simplificar numa única função já citada acima, gerarNovoConselho().
+
+4- Coloquei a função dentro do try e do catch para fazer os tratamentos de erros.
 
 5- Para atualizar os conselhos sem denpender de atualizar no navegador, adicionei um evento no botão com id "btnGerarNovoConselho" que
-aciona as duas funções anteriores criadas 'gerarNovoConselho()' e 'idAleatorioConselho()'.
+aciona a função 'gerarNovoConselho()'. Deixei a função sendo chamada por último.
+
 ```js
-btnGerarNovoConselho.addEventListener('click', ()=>{
-    gerarNovoConselho()
-    idAleatorioConselho()
-})
+btnGerarNovoConselho.addEventListener('click', gerarNovoConselho);
+
+gerarNovoConselho();
 ```
